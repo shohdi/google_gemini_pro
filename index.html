@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemini Chat</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <style>
+    #result {
+      height: 500px;
+     
+      overflow: scroll;
+      
+    }
+    #loadingDiv
+    {
+        display: none;
+        position: absolute;
+        left: 0px;
+        top:0px;
+        background-color: rgba(255, 255, 255, 0.4);
+        width:100%;
+        height: 100%;
+        z-index: 99999;
+        text-align: center;
+        vertical-align: middle;
+
+        
+    }
+    #loadingDiv img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 100000;
+            }
+    .form-group
+    {
+        padding-bottom: 10px;
+    }
+    .row
+    {
+        margin-top:10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .code-container {
+  background-color: #efefef;
+  padding: 16px;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+  </style>
+  
+  
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="control-label">Result :</label>
+                <div id="result" class="code-container">
+
+
+                </div>
+                <div id="encoder" style="display: none;"></div>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-md-12 form-group" id="apiKeyDiv">
+                    <label for="api_key" class="control-label">Api key :</label>
+                    <input type="text" id="api_key" class="form-control" />
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="comment" class="control-label">You :</label>
+                    <textarea id="comment" rows="5" class="form-control" contenteditable="true"></textarea>
+                </div>
+                <div class="col-md-12 form-group">
+                    <a href="" class="btn btn-success" id="sendBtn" style="cursor: pointer;">Send</a>
+                </div>
+                <div class="col-md-12 form-group">
+                    <a href="" class="btn btn-danger" id="clearBtn" style="cursor: pointer;">Clear</a>
+                </div>
+            </div>
+        </form>
+        <div id="loadingDiv">
+            <img src="loader19.gif" alt="Loading ..." />
+        </div>
+    </div>
+    
+    <script src="dist/bundle.js"></script>
+     
+</body>
+</html>
